@@ -289,7 +289,7 @@ server.port=81
 ```
 
 ```properties
-#环境分类配置文件application-test.properties
+#环境分类配置文件 application-test.properties
 server.port=82
 ```
 
@@ -514,6 +514,8 @@ public class LoginCheckFilter implements Filter{
 
 然后再启动类上添加 **@ServletComponentScan注解**
 
+
+
 ## @ServletComponentScan
 
 在SpringBoot项目中, 在引导类/配置类上加了该注解后, 会自动扫描注解类所在的包及其子包下的`@WebServlet , @WebFilter , @WebListener` 注解, 自动注册Servlet的相关组件 。
@@ -582,7 +584,7 @@ public void download(HttpServletResponse response) throws IOException {
 对于SpringBoot工程进行文件上传，默认支持最大的文件是1M。为了解决这个问题，需要在application.yml中配置文件限制
 
 ```properties
-Spring:
+spring:
   servlet:
     multipart:
       max-file-size: 30MB
