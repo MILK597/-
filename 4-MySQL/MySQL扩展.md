@@ -659,3 +659,14 @@ CREATE
 - like做字段比较时只有前缀确定时才会使用索引
 - 在列上进行运算后不会使用索引，如year(start_time)<2020不会使用start_time上的索引
 
+# 去重并保留一条记录
+
+例如去重表中name字段相同的记录，并保留id最大的那一条：
+
+```sql
+DELETE a 
+FROM tb_table a
+	INNER JOIN tb_table b ON a.去重字段 = b.去重字段
+WHERE a.id > b.id
+```
+
